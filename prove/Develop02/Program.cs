@@ -21,6 +21,9 @@ class Program
             switch (Console.ReadLine())
             {
                 case "1":
+                    Console.WriteLine("What is your current mood?");
+                    Console.Write("> ");
+                    string mood = Console.ReadLine();
                     string randomPrompt = PromptGenerator.GetRandomPrompt();
                     Console.WriteLine(randomPrompt);
                     Console.Write("> ");
@@ -29,7 +32,8 @@ class Program
                     {
                         _date = DateTime.Now.ToString("yyyy-MM-dd"),
                         _prompt = randomPrompt,
-                        _response = response
+                        _response = response,
+                        _mood = mood
                     };
                     journalManager.AddEntry(newEntry);
                     break;

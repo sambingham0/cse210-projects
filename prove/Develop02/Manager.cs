@@ -18,7 +18,7 @@ public class JournalManager
         {
             foreach (var entry in _entries)
             {
-                writer.WriteLine($"{entry._date} - {entry._prompt}: {entry._response}");
+                writer.WriteLine($"{entry._date} - {entry._mood} - {entry._prompt}: {entry._response}");
             }
         }
 
@@ -38,13 +38,14 @@ public class JournalManager
                     // Assuming the format is "Date - Prompt: Response"
                     string[] parts = line.Split(new[] { " - ", ": " }, StringSplitOptions.None);
 
-                    if (parts.Length == 3)
+                    if (parts.Length == 4)
                     {
                         JournalEntry loadedEntry = new JournalEntry
                         {
                             _date = parts[0],
-                            _prompt = parts[1],
-                            _response = parts[2]
+                            _mood = parts[1],
+                            _prompt = parts[2],
+                            _response = parts[3]
                         };
 
                         _entries.Add(loadedEntry);
