@@ -6,9 +6,11 @@ class Program
     {
         bool exit = false;
         JournalManager journalManager = new JournalManager();
+        Console.WriteLine("Welcome to the Journal Program!");
 
         while (!exit)
         {
+            Console.WriteLine("Select one of the following choices: ");
             Console.WriteLine("1. Add New Entry");
             Console.WriteLine("2. Display Journal");
             Console.WriteLine("3. Save to File");
@@ -21,7 +23,7 @@ class Program
                 case "1":
                     string randomPrompt = PromptGenerator.GetRandomPrompt();
                     Console.WriteLine(randomPrompt);
-                    Console.Write("Enter your response to the prompt: ");
+                    Console.Write("> ");
                     string response = Console.ReadLine();
                     JournalEntry newEntry = new JournalEntry
                     {
