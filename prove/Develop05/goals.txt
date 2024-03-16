@@ -1,0 +1,2 @@
+SimpleGoal,jorkin it,in the library,50,True
+ChecklistGoal,walking,on grandma,25,5,60000,2

@@ -10,7 +10,7 @@ public class JournalManager
         foreach (var entry in _entries)
         {
             entry.DisplayEntry();
-    }
+        }
    }
    public void SaveToFile(string fileName)
    {
